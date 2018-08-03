@@ -20,15 +20,19 @@ object CinnamonBug {
                 parameter('p) {
                   case "a" =>
                     Endpoint.withName("foo-a") {
-                      parameter('pa) { _ =>
+                      //parameter('pa) { _ =>
+                      onSuccess(Future("s")) { _ =>
                         complete(StatusCodes.OK)
                       }
+                     //}
                     }
                   case "b" =>
                     Endpoint.withName("foo-b") {
-                      parameter('pb) { _ =>
+                      //parameter('pb) { _ =>
+                      onSuccess(Future("s")) { _ =>
                         complete(StatusCodes.OK)
                       }
+                      //}
                     }
                 }
               }
