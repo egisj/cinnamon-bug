@@ -20,11 +20,15 @@ object CinnamonBug {
                 parameter('p) {
                   case "a" =>
                     Endpoint.withName("foo-a") {
-                      complete(StatusCodes.OK)
+                      parameter('pa) { _ =>
+                        complete(StatusCodes.OK)
+                      }
                     }
                   case "b" =>
                     Endpoint.withName("foo-b") {
-                      complete(StatusCodes.OK)
+                      parameter('pb) { _ =>
+                        complete(StatusCodes.OK)
+                      }
                     }
                 }
               }
